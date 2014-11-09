@@ -1,5 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <thread>
+#include <future>
+
 using namespace std;
 
 class Test {
@@ -126,8 +130,46 @@ int main(int argc, const char * argv[])
     for (TestV *t: vv) {
         cout << t->get_i() << endl;
     }
+
+    // unique_ptr
+    unique_ptr<TestV> usv { new TestSubV };
+    cout << usv->get_i() << endl;
+    
+    // concurrency
+    queue<char> q;
+    mutex qm;
+
+    string str = "abcdefghijklmnopqrstuvwxyz";
+    
+    for (char c: str)
+        q.push(c);
+ 
+    auto l = [&q, &qm]() {
+        while (true) {
+            unique_lock<mutex> lock { qm };
+            
+            if (q.empty())
+                return;
+            
+            char c = q.front();
+            cout << c << endl;
+            q.pop();
+            
+            lock.unlock();
+            
+            this_thread::sleep_for(chrono::milliseconds(1000));
+        }
+    };
+    
+    future<void> f1 = async(l);
+    future<void> f2 = async(l);
+    future<void> f3 = async(l);
+    future<void> f4 = async(l);
+    
+    f1.get();
+    f2.get();
+    f3.get();
+    f4.get();
     
     return 0;
 }
-
-
