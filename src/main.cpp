@@ -102,15 +102,13 @@ int main(int argc, const char * argv[])
     vector<Test> v = { Test(55,66) };
     cout << v.at(0).get_i() << endl;
     
-    for (Test t: v) {
+    for (Test t: v)
         cout << t.get_i() << endl;
-    }
     
     v.push_back(TestSub());
     
-    for (Test t: v) {
+    for (Test t: v)
         cout << t.get_i() << endl;
-    }
     
     // polymorphism
     TestV *sv = new TestSubV;
@@ -121,15 +119,13 @@ int main(int argc, const char * argv[])
     vector<TestV *> vv = { new TestV(56,67) };
     cout << vv.at(0)->get_i() << endl;
     
-    for (TestV *t: vv) {
+    for (TestV *t: vv)
         cout << t->get_i() << endl;
-    }
     
     vv.push_back(new TestSubV());
     
-    for (TestV *t: vv) {
+    for (TestV *t: vv)
         cout << t->get_i() << endl;
-    }
 
     // unique_ptr
     unique_ptr<TestV> usv { new TestSubV };
