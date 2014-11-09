@@ -10,17 +10,17 @@ protected:
 public:
     Test() {}
     Test(int p_i, int p_j) : i(p_i), j(p_j) {}
-
+    
     int get_i () {
         return i;
-    };
+    }
 };
 
 class TestSub : public Test {
 public:
     int get_i () {
         return i * 1000;
-    };
+    }
 };
 
 class TestV {
@@ -34,35 +34,35 @@ public:
     
     virtual int get_i () {
         return i;
-    };
+    }
 };
 
 class TestSubV : public TestV {
 public:
     int get_i () override {
         return i * 1000;
-    };
+    }
 };
 
 int main(int argc, const char * argv[])
 {
     cout << "Hellooo, World!" << endl;
-
+    
     // constexpr
     constexpr int x = 5 + 6;
     cout << x << endl;
-
+    
     // pointer
     int *y = nullptr;
     int a = 77;
-
+    
     y = &a;
     cout << *y << endl;
-
+    
     // reference
     int const b = 888;
     cout << b << endl;
-
+    
     int & h = *y;
     h = b;
     cout << h + 3 << endl;
@@ -79,12 +79,12 @@ int main(int argc, const char * argv[])
     Test *t = new Test;
     cout << t->get_i() << endl;
     delete t;
-
+    
     // constructor
     t = new Test{77, 88};
     cout << t->get_i() << endl;
     delete t;
-
+    
     // subclass
     t = new TestSub;
     cout << t->get_i() << endl;
@@ -97,17 +97,17 @@ int main(int argc, const char * argv[])
     // collection
     vector<Test> v = { Test(55,66) };
     cout << v.at(0).get_i() << endl;
-
+    
     for (Test t: v) {
         cout << t.get_i() << endl;
     }
     
     v.push_back(TestSub());
-
+    
     for (Test t: v) {
         cout << t.get_i() << endl;
     }
-
+    
     // polymorphism
     TestV *sv = new TestSubV;
     cout << sv->get_i() << endl;
@@ -129,3 +129,5 @@ int main(int argc, const char * argv[])
     
     return 0;
 }
+
+
