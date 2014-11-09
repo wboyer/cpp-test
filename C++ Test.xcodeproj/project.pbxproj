@@ -59,8 +59,7 @@
 			children = (
 				B17D24751A0E623400D0EEDC /* main.cpp */,
 			);
-			name = src;
-			path = "ufora-demo";
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,7 +78,7 @@
 			dependencies = (
 			);
 			name = "C++ Test";
-			productName = "ufora-demo";
+			productName = "cpp-demo";
 			productReference = B17D24721A0E623400D0EEDC /* C++ Test */;
 			productType = "com.apple.product-type.tool";
 		};
