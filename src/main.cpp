@@ -5,49 +5,10 @@
 #include <future>
 #include <fstream>
 
+#include "test.h"
+#include "testv.h"
+
 using namespace std;
-
-class Test {
-protected:
-    int i = 33;
-    int j = 0;
-    
-public:
-    Test() {}
-    Test(int p_i, int p_j) : i(p_i), j(p_j) {}
-    
-    int get_i () {
-        return i;
-    }
-};
-
-class TestSub : public Test {
-public:
-    int get_i () {
-        return i * 1000;
-    }
-};
-
-class TestV {
-protected:
-    int i = 34;
-    int j = 0;
-    
-public:
-    TestV() {}
-    TestV(int p_i, int p_j) : i(p_i), j(p_j) {}
-    
-    virtual int get_i () {
-        return i;
-    }
-};
-
-class TestSubV : public TestV {
-public:
-    int get_i () override {
-        return i * 1000;
-    }
-};
 
 int main(int argc, const char * argv[])
 {
@@ -181,7 +142,7 @@ int main(int argc, const char * argv[])
     int constexpr bs = 1024;
 
     char *buf = new char[bs];
-    // unique_ptr<char []> buf { new char[bs] }; Why won't getline() accept this below?
+    // unique_ptr<char []> buf = { new char[bs] }; Why won't getline() accept this below?
     
     ifstream is(fn);
 
