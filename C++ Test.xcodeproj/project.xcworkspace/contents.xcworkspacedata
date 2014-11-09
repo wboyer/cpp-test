@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ufora-demo.xcodeproj">
+      location = "self:C++ Test.xcodeproj">
    </FileRef>
 </Workspace>

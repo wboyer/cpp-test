@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B17D24721A0E623400D0EEDC /* ufora-demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ufora-demo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B17D24721A0E623400D0EEDC /* C++ Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C++ Test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17D24751A0E623400D0EEDC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +41,7 @@
 		B17D24691A0E623400D0EEDC = {
 			isa = PBXGroup;
 			children = (
-				B17D24741A0E623400D0EEDC /* ufora-demo */,
+				B17D24741A0E623400D0EEDC /* src */,
 				B17D24731A0E623400D0EEDC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +49,26 @@
 		B17D24731A0E623400D0EEDC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B17D24721A0E623400D0EEDC /* ufora-demo */,
+				B17D24721A0E623400D0EEDC /* C++ Test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B17D24741A0E623400D0EEDC /* ufora-demo */ = {
+		B17D24741A0E623400D0EEDC /* src */ = {
 			isa = PBXGroup;
 			children = (
 				B17D24751A0E623400D0EEDC /* main.cpp */,
 			);
+			name = src;
 			path = "ufora-demo";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B17D24711A0E623400D0EEDC /* ufora-demo */ = {
+		B17D24711A0E623400D0EEDC /* C++ Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B17D24791A0E623400D0EEDC /* Build configuration list for PBXNativeTarget "ufora-demo" */;
+			buildConfigurationList = B17D24791A0E623400D0EEDC /* Build configuration list for PBXNativeTarget "C++ Test" */;
 			buildPhases = (
 				B17D246E1A0E623400D0EEDC /* Sources */,
 				B17D246F1A0E623400D0EEDC /* Frameworks */,
@@ -77,9 +78,9 @@
 			);
 			dependencies = (
 			);
-			name = "ufora-demo";
+			name = "C++ Test";
 			productName = "ufora-demo";
-			productReference = B17D24721A0E623400D0EEDC /* ufora-demo */;
+			productReference = B17D24721A0E623400D0EEDC /* C++ Test */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B17D246D1A0E623400D0EEDC /* Build configuration list for PBXProject "ufora-demo" */;
+			buildConfigurationList = B17D246D1A0E623400D0EEDC /* Build configuration list for PBXProject "C++ Test" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -108,7 +109,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B17D24711A0E623400D0EEDC /* ufora-demo */,
+				B17D24711A0E623400D0EEDC /* C++ Test */,
 			);
 		};
 /* End PBXProject section */
@@ -202,21 +203,21 @@
 		B17D247A1A0E623400D0EEDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "C++ Test";
 			};
 			name = Debug;
 		};
 		B17D247B1A0E623400D0EEDC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "C++ Test";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B17D246D1A0E623400D0EEDC /* Build configuration list for PBXProject "ufora-demo" */ = {
+		B17D246D1A0E623400D0EEDC /* Build configuration list for PBXProject "C++ Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B17D24771A0E623400D0EEDC /* Debug */,
@@ -225,13 +226,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B17D24791A0E623400D0EEDC /* Build configuration list for PBXNativeTarget "ufora-demo" */ = {
+		B17D24791A0E623400D0EEDC /* Build configuration list for PBXNativeTarget "C++ Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B17D247A1A0E623400D0EEDC /* Debug */,
 				B17D247B1A0E623400D0EEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
