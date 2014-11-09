@@ -3,6 +3,7 @@
 #include <queue>
 #include <thread>
 #include <future>
+#include <fstream>
 
 using namespace std;
 
@@ -131,16 +132,20 @@ int main(int argc, const char * argv[])
     unique_ptr<TestV> usv { new TestSubV };
     cout << usv->get_i() << endl;
     
-    // concurrency
+    // concurrency and file input/output
     queue<char> q;
+    string fn = "out.txt";
+    ofstream st(fn);
     mutex qm;
-
+    
     string str = "abcdefghijklmnopqrstuvwxyz";
+    
+    cout << "writing \"" << str << "\" to " << fn << "..." << endl;
     
     for (char c: str)
         q.push(c);
  
-    auto l = [&q, &qm]() {
+    auto l = [&q, &st, &qm]() {
         while (true) {
             unique_lock<mutex> lock { qm };
             
@@ -148,7 +153,7 @@ int main(int argc, const char * argv[])
                 return;
             
             char c = q.front();
-            cout << c << endl;
+            st << c;
             q.pop();
             
             lock.unlock();
@@ -166,6 +171,24 @@ int main(int argc, const char * argv[])
     f2.get();
     f3.get();
     f4.get();
+
+    st << endl;
+    st.close();
     
+    cout << "done!" << endl;
+    cout << "contents of " << fn << ":" << endl;
+    
+    int constexpr bs = 1024;
+
+    char *buf = new char[bs];
+    // unique_ptr<char []> buf { new char[bs] }; Why won't getline() accept this below?
+    
+    ifstream is(fn);
+
+    while (is.getline(buf, bs))
+        cout << buf << endl;
+
+    is.close();
+
     return 0;
 }
