@@ -10,6 +10,20 @@
 
 using namespace std;
 
+template<typename T>
+void f(T o) {
+    cout << o << endl;
+}
+
+template<typename T>
+class equals {
+    const T val;
+public:
+    equals() : val(0) {}
+    equals(const T & v) : val(v) {}
+    bool operator() (const T & o) const { return (o == val); };
+};
+
 int main(int argc, const char * argv[])
 {
     cout << "Hellooo, World!" << endl;
@@ -92,6 +106,21 @@ int main(int argc, const char * argv[])
     // unique_ptr
     unique_ptr<TestV> usv { new TestSubV };
     cout << usv->get_i() << endl;
+    
+    // templates
+    f<int> (7);
+    f<string> ("hi");
+    f<bool> (false);
+    
+    equals<int> e0;
+    cout << e0(0) << endl;
+    
+    equals<int> e6 {6};
+    cout << e6(6) << endl;
+
+    equals<int> e7 (7);
+    cout << e7(6) << endl;
+    cout << e7(7) << endl;
     
     // concurrency and file input/output
     queue<char> q;
